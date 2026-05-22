@@ -36,7 +36,7 @@ def dashboard():
                 
                 
             if st.button("upload file to cloudinary"):
-                uploaded_dict_obj=cloudinary.uploader.upload(choosedFile,resourse_type="auto") 
+                uploaded_dict_obj=cloudinary.uploader.upload(choosedFile,resource_type="auto") 
                 url=uploaded_dict_obj["secure_url"]
                 st.write(url)
                 st.write("file uploaded cloudinary")
@@ -74,12 +74,12 @@ def signup_function():
     st.header("SignUp")
     with st.form("SignUp_form"):
         name=st.text_input("Name")
-        Email=st.text_input("Email")
+        email=st.text_input("Email")
         password=st.text_input("Password",type="password")
         btn=st.form_submit_button("SignUp")
         if btn:
             query="insert into users3(name,Email,password)values(%s,%s,%s)"
-            values=(name,Email,password)
+            values=(name,email,password)
             cursor_obj.execute(query,values)
             conn_obj.commit()
             st.write("user added successfully ")
