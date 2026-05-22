@@ -33,13 +33,24 @@ def dashboard():
                 st.video(choosedFile)
             elif "audio" in choosedFile.type:
                 st.audio(choosedFile)   
-                
-                
+            
+            
+            
+            
             if st.button("upload file to cloudinary"):
-                uploaded_dict_obj=cloudinary.uploader.upload(choosedFile,resource_type="auto") 
+                if "pdf" in choosedFile.type:
+                    uploaded_dict_obj=cloudinary.uploader.upload(
+                    choosedFile,
+                    resource_type="raw"
+                     ) 
+                else:
+                    uploaded_dict_obj=cloudinary.uploader.upload(
+                        choosedFile,
+                        resource_type="auto") 
                 url=uploaded_dict_obj["secure_url"]
                 st.write(url)
                 st.write("file uploaded cloudinary")
+                    
     elif option=="Logout":
         st.session_state.user=None
         st.success("logout successfully")
