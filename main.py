@@ -3,9 +3,9 @@ from db_c import conn_obj ,cursor_obj
 
 st.title("Media Platform")
 
-login,signup=st.tabs(
-                ["Login","SignUp"]  
-                )
+# login,signup=st.tabs(
+#                 ["Login","SignUp"]  
+#                 )
 if "user" not in st.session_state:
     st.session_state.user=None
 
