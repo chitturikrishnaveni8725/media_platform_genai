@@ -35,3 +35,7 @@ cursor_obj.execute("""
                )
                
                """)
+
+
+conn_obj.commit()
+print("Tables created successfully")
