@@ -12,7 +12,7 @@ if "user" not in st.session_state:
 
 def dashboard():
     st.sidebar.success("welcome user")
-    option=st.sidebar.selectbox("choose:--"["uploadFiles","viewFiles","Logout"])
+    option=st.sidebar.selectbox("choose:--",["uploadFiles","viewFiles","Logout"])
     st.header("dashboard")
     if option=="uploadFiles":
         st.header("upload your files here")
