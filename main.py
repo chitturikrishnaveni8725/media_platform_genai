@@ -8,7 +8,7 @@ login,signup=st.tabs(
                 )
 
 
-cursor_obj.execute("show databases")
+cursor_obj.execute("show tables")
 dbs=cursor_obj.fetchall()
 for db in dbs:
     st.write(db)
