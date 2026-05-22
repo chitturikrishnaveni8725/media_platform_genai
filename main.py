@@ -1,5 +1,6 @@
 import streamlit as st
 
+st.title("Media Platform")
 
 login,signup=st.tabs(
                 ["Login","SignUp"]  
