@@ -9,4 +9,4 @@ conn_obj=mysql.connector.connect(
     password=st.secrets["password"]   
 )
 
-cursor_obj=conn_obj.cursor()
+cursor_obj=conn_obj.cursor(dictionary=True)
