@@ -28,4 +28,14 @@ with signup:
         Email=st.text_input("Email")
         password=st.text_input("Password",type="password")
         btn=st.form_submit_button("SignUp")
+        if btn:
+            query="insert into users3(name,Email,password)values(%s,%s,%s)"
+            values=(name,Email,password)
+            cursor_obj.execute(query,values)
+            conn_obj.commit()
+            st.write("user added successfully ")
+            
+        
+        
+        
         
