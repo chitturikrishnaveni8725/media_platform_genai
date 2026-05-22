@@ -20,12 +20,12 @@ def dashboard():
         if choosedFile:
             st.write(choosedFile.name)
             st.write(choosedFile.type)
-        if "image" in choosedFile.type:
-            st.image(choosedFile)
-        elif "video" in choosedFile.type:
-            st.video(choosedFile)
-        elif "audio" in choosedFile.type:
-            st.audio(choosedFile)    
+            if "image" in choosedFile.type:
+                st.image(choosedFile)
+            elif "video" in choosedFile.type:
+                st.video(choosedFile)
+            elif "audio" in choosedFile.type:
+                st.audio(choosedFile)    
                 
             
             
