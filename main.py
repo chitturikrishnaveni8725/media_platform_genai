@@ -11,7 +11,7 @@ cloudinary.config(
     api_secret=st.secrets["api_secret"]
 )
 
-
+st.title("media platform")
 
 if "user" not in st.session_state:
     st.session_state.user=None
@@ -110,7 +110,7 @@ else:
             
         
         
-# cursor_obj.execute("show tables")
-# dbs=cursor_obj.fetchall()
-# for db in dbs:
-#     st.write(db)
+cursor_obj.execute("show tables")
+dbs=cursor_obj.fetchall()
+for db in dbs:
+    st.write(db)
